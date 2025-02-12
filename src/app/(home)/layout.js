@@ -18,14 +18,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-
-      <div
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-
-        {children}
-      </div>
-  
-  );
+  return <div>{children}</div>;
 }
