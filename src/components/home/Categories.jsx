@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 import cse from '../../../public/cse.webp';
-import {Oswald} from "next/font/google";
-const Oswalds = Oswald({ weight: "600", subsets: ["latin"] });
+import SectionTitle from '../Shared/SectionTitle';
 export default function Categories() {
   return (
     <div className='container mx-auto mt-20 px-4'>
-      <h2 className={`${Oswalds.className} text-4xl font-semibold`}>Browse By Book Categories</h2>
+      <SectionTitle text={"Browse By Book Categories"}/>
 
       <div className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6  cursor-pointer">
         {Array(5).fill(0).map((_, index) => (
