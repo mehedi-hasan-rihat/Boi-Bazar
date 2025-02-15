@@ -7,12 +7,11 @@ export default function Home() {
   
   return (
     <div className="">
-      <Navbar />
       <Banner />
       <Categories/>
       <FeaturedBooks/>
       <PostBook/>
-      <div className="min-h-[100vh]"></div>
+
     </div>
   );
 }

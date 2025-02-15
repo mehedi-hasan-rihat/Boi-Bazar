@@ -14,7 +14,7 @@ export default function PostBook() {
   return (
     <div>
       <div
-        className="mt-36 sticky top-5 text-black font-semibold bg-center bg-cover bg-no-repeat w-full"
+        className="my-36 sticky top-5 text-black font-semibold bg-center bg-cover bg-no-repeat w-full"
         style={style}
       >
         <div className="absolute inset-0 bg-black/30"></div>
