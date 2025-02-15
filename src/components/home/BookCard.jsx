@@ -6,13 +6,13 @@ const Oswalds = Oswald({ weight: "600", subsets: ["latin"] });
 
 export default function BookCard() {
   return (
-    <div className="flex flex-col justify-center text-center items-center rounded-md py-4">
-      <div className="w-[85%] h-[340px] bg-white flex items-center justify-center cursor-pointer">
-        <div className="transition-all duration-500 w-44 h-64 transform hover:scale-110">
+    <div className="group flex flex-col justify-center text-center items-center  py-4">
+      <div className="w-[85%] h-[320px] bg-white/80 flex items-center justify-center cursor-pointer rounded-md">
+        <div className="transition-all duration-500 w-44 h-64 transform group-hover:scale-110">
           <Image
             src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/e53af8191_202772.jpg"
             alt="Book"
-            width={100}
+            width={150}
             height={150}
             className="w-full rounded h-full object-cover"
           />
