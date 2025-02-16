@@ -1,4 +1,4 @@
-import { Cinzel_Decorative } from "next/font/google";
+import Footer from "@/components/Shared/Footer";
 import "../globals.css";
 import Navbar from "@/components/Shared/Navbar";
 
@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar/>
         {children}
+        <Footer/>
       </div>
   
   );

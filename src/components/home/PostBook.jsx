@@ -31,7 +31,7 @@ export default function PostBook() {
           </p>
 
           {/* Buttons Section */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+          <div className="flex items-center justify-center gap-4 mt-6">
             <button className="w-max px-6 py-3 bg-[#1EAACE] hover:bg-[#119cbf] text-white text-lg font-semibold rounded-lg transition-all duration-300">
               Post Your Book
             </button>

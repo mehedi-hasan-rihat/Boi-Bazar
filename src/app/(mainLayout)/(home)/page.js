@@ -1,5 +1,4 @@
 import Banner from "@/components/home/Banner";
-import Navbar from "@/components/Shared/Navbar";
 import Categories from "@/components/home/Categories";
 import FeaturedBooks from "@/components/home/FeaturedBooks";
 import PostBook from "@/components/home/PostBook";
@@ -11,7 +10,6 @@ export default function Home() {
       <Categories/>
       <FeaturedBooks/>
       <PostBook/>
-
     </div>
   );
 }

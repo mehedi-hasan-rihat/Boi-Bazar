@@ -11,17 +11,17 @@ export default function Banner() {
   return (
     <div>
       <div
-        className="h-[90vh] sticky top-5 text-black font-semibold bg-center bg-cover bg-no-repeat w-full"
+        className="h-[90vh]  sticky top-5 text-black font-semibold bg-center bg-cover bg-no-repeat w-full"
         style={style}
       >
         {/* Dark Overlay for Text Visibility */}
         <div className="absolute inset-0 bg-black/30"></div>
 
-        <div className="max-w-4xl flex flex-col justify-center h-full px-4 relative z-10 text-white left-5">
+        <div className="md:mx-8 lg::mx-20 px-3 max-w-xl md:max-w-4xl flex flex-col justify-center h-full relative z-10 text-white ">
           <h1 className={`${Oswalds.className} text-4xl md:text-5xl lg:text-6xl max-w-xl font-bold mb-4`}>
             Buy & Sell Old Books - Save Big on Textbooks!
           </h1>
-          <p className={`text-lg md:text-xl font-medium mt-3 max-w-2xl`}>
+          <p className={`text-lg md:text-xl font-medium pr-2 md:mt-3 max-w-2xl`}>
             Post your old textbooks and sell them at 45% of the original price.
             Help fellow students save money while finding the books they need!
           </p>
