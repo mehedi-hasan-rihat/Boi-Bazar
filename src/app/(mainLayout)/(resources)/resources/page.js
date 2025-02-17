@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className=" min-h-[calc(100vh-250px)]">
       <div className="bg-[#F5F7F8]">
-        <div className="flex gap-20 container mx-auto pt-10 pb-20">
+        <div className="flex gap-20 container mx-auto pt-20 pb-20">
           <div className="w-full">
             <div className="flex gap-2 items-center">
               <Image
