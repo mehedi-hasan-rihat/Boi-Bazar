@@ -1,11 +1,14 @@
+'use client'
 import React from "react";
 import { Oswald } from "next/font/google";
-
+import { useRouter } from 'next/navigation'
 const Oswalds = Oswald({ weight: "500", subsets: ["latin"] });
 
-export default function BookCard() {
+export default function BookCard({book}) {
+  const router = useRouter()
+  const {image, bookName, writer, price, _id} =  book;
   return (
-    <div  className="group relative block overflow-hidden ">
+    <div  className="group relative block overflow-hidden " onClick={() => router.push(`/books/${_id}`)}>
       <button className="absolute end-4 top-4 z-10 rounded-full bg-black/90 text-white/80 p-2 transition hover:text-white">
         <span className="sr-only">Wishlist</span>
 
@@ -26,19 +29,19 @@ export default function BookCard() {
       </button>
 
       <img
-        src="https://ds.rokomari.store/rokomari110/ProductNew20190903/260X372/e53af8191_202772.jpg"
+        src={image}
         alt=""
         className="h-64 py-5 w-full object-contain transition duration-500 group-hover:scale-105 sm:h-72 border border-gray-100 border-b-0"
       />
 
       <div className="relative border border-gray-100 bg-white p-6">
         <p className="text-gray-700">
-          $49.99
+          $ {price}
           <span className="text-gray-400 line-through  pl-2">$80</span>
         </p>
 
         <h3 className={`mt-1.5 text-lg font-normal  ${Oswalds.className}`}>
-        Computer Architecture and Microprocessor
+        {bookName}
         </h3>
 
       

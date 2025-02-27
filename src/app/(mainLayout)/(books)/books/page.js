@@ -1,7 +1,5 @@
 import AllBooks from "@/components/Books/AllBooks";
 import PageTitle from "@/components/Shared/PageTitle";
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div>
