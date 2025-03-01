@@ -1,13 +1,18 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { Oswald } from "next/font/google";
+import { useRouter } from "next/navigation";
 
 const Oswalds = Oswald({ weight: "600", subsets: ["latin"] });
 
-export default function BookCard({book}) {
-
+export default function BookCard({ book }) {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/books/${book._id}`);
+  };
   return (
-    <div className="group flex flex-col justify-center text-center items-center  py-4">
+    <div className="group flex flex-col justify-center text-center items-center  py-4" onClick={handleClick}>
       <div className="w-[250px] sm:w-[85%] h-[320px] bg-white/80 flex items-center justify-center cursor-pointer rounded-md">
         <div className="transition-all duration-500 w-44 h-64 transform group-hover:scale-110">
           <Image
@@ -30,10 +35,10 @@ export default function BookCard({book}) {
           <span className="absolute inset-y-0 left-0 w-px bg-[#318ef1] transition-all duration-300 group-hover:w-full group-active:bg-indigo-500"></span>
 
           <p className="relative text-sm font-medium text-[#1c85f5] transition-colors group-hover:text-white">
-          Purchase Now
+            Purchase Now
           </p>
         </div>
-       
+
         {/* <div className="group cursor-pointer flex items-center justify-between gap-2 rounded-md border border-[#318ef1] bg-[#318ef1] mt-2 px-5 transition-colors hover:bg-transparent focus:outline-none focus:ring py-1 ">
           <span className="font-medium text-white transition-colors group-hover:text-[#0f82fd] group-active:text-indigo-500">
             Purchase Now

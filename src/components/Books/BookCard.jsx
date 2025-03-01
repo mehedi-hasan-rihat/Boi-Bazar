@@ -49,7 +49,7 @@ export default function BookCard({book}) {
         Hoauk Publication
         </p>
 
-        <form className="mt-4 flex gap-4">
+        <div className="mt-4 flex gap-4">
           <button className="block w-full rounded-sm bg-gray-100 px-4 py-3 text-sm font-medium text-gray-900 transition hover:scale-105">
             Add to Cart
           </button>
@@ -60,7 +60,7 @@ export default function BookCard({book}) {
           >
             Buy Now
           </button>
-        </form>
+        </div>
       </div>
     </div>
   );
