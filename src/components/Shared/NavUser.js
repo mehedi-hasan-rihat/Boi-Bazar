@@ -8,7 +8,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import { CgLogOut } from "react-icons/cg";
+import NavLink from "./NavLink";
 export default function NavUser({ session }) {
   return (
     <div className="flex gap-2 items-center justify-center">
@@ -26,7 +27,7 @@ export default function NavUser({ session }) {
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <div className="space-y-1">
-            {" "}
+
             <DropdownMenuItem className="hover:bg-gray-200">
               Profile
             </DropdownMenuItem>
@@ -36,12 +37,13 @@ export default function NavUser({ session }) {
             <DropdownMenuItem className="hover:bg-gray-200">
               My Books
             </DropdownMenuItem>
-            <DropdownMenuItem className="hover:bg-gray-200">
+           <NavLink href={'/dashboard'}> <DropdownMenuItem className="hover:bg-gray-200">
               Dashboard
-            </DropdownMenuItem>
+            </DropdownMenuItem></NavLink>
             <DropdownMenuItem className="hover:bg-gray-200">
-              Logout
-            </DropdownMenuItem>
+            <span>Logout</span> <span className="text-xl -ml-[2px]"><CgLogOut/> </span>
+</DropdownMenuItem>
+
           </div>
         </DropdownMenuContent>
       </DropdownMenu>
