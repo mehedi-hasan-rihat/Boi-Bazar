@@ -10,12 +10,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-
       <div
-
       >
         <Navbar/>
-      .<div className="min-h-[calc(100vh-350px)]"> {children}</div>
+      <div className="min-h-[calc(100vh-350px)]"> {children}</div>
         <Footer/>
       </div>
   

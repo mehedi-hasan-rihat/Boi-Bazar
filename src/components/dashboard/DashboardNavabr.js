@@ -8,7 +8,7 @@ const DashboardNavbar = () => {
   const [search, setSearch] = useState("");
 
   return (
-    <nav className="bg-white shadow-sm mb-5 p-4 flex justify-between items-center">
+    <nav className="bg-white z-50 shadow-sm mb-5 p-4 flex justify-between items-center sticky top-0">
       {/* Left: Brand/Logo */}
       <div className="text-2xl font-bold text-gray-800">Dashboard</div>
 

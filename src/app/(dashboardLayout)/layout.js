@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <div className="flex">
-      <div className="hidden md:block w-80">
+    <div className="flex h-screen ">
+      <div className="hidden md:block w-[280px]">
         <DashboardNavList />
       </div>
-      <div className="min-h-[calc(100vh-250px)] w-full">
+      <div className="min-h-[calc(100vh-250px)] w-full bg-[#F5F6FA] overflow-y-scroll pb-10">
         <DashboardNavabr />
-        <div className="px-2"> {children}</div>
+        <div className="px-4"> {children}</div>
       </div>
     </div>
   );
