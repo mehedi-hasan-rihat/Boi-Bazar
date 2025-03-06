@@ -6,7 +6,6 @@ export default async function AllBooks() {
   const res = await fetch('http://localhost:3000/api/books')
   const book = await res.json()
 
-    
   return (
     <div className='container mx-auto my-36'>
 

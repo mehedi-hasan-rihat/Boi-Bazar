@@ -11,6 +11,8 @@ import {
 import { CgLogOut } from "react-icons/cg";
 import NavLink from "./NavLink";
 export default function NavUser({ session }) {
+  console.log(session);
+  const user = 'admin'
   return (
     <div className="flex gap-2 items-center justify-center">
       <DropdownMenu>
@@ -23,27 +25,54 @@ export default function NavUser({ session }) {
             className="w-11 h-11 rounded-full"
           />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-52">
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuContent className="w-56">
+          <DropdownMenuLabel>
+            <div className="text-center flex flex-col justify-center items-center py-2">
+              <Image
+                src={session.user?.image}
+                alt="profileImage"
+                width={150}
+                height={150}
+                className="w-11 h-11 rounded-full"
+              />
+              <div className="mt-2">
+         
+                <p className="font-semibold text-[15px]">{session.user?.name}</p>
+              </div>
+              <p className="font-medium">{session.user?.email}</p>
+            </div>
+          </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <div className="space-y-1">
-
-            <DropdownMenuItem className="hover:bg-gray-200">
-              Profile
-            </DropdownMenuItem>
-            <DropdownMenuItem className="hover:bg-gray-200">
+           
+           {user === "user" && <> <DropdownMenuItem className="hover:bg-gray-200">
               My Cart
-            </DropdownMenuItem>
+            </DropdownMenuItem>  <DropdownMenuSeparator /></>}
+         {user === "seller" && <>   <DropdownMenuItem className="hover:bg-gray-200">
+                       My Orders
+            </DropdownMenuItem>  <DropdownMenuSeparator /></>}
+            {user === "seller" && <>   <DropdownMenuItem className="hover:bg-gray-200">
+                       Manage Orders
+            </DropdownMenuItem>  <DropdownMenuSeparator /></>}
+            {user === "seller" && <>   <DropdownMenuItem className="hover:bg-gray-200">
+                     Post a book
+            </DropdownMenuItem>  <DropdownMenuSeparator /></>}
+            {user === "user" && <> <DropdownMenuItem className="hover:bg-gray-200">
+              My Orders
+            </DropdownMenuItem>  <DropdownMenuSeparator /></>}
+        
+            <NavLink href={"/dashboard"}>
+           
+              <DropdownMenuItem className="hover:bg-gray-200">
+                Dashboard
+              </DropdownMenuItem>
+            </NavLink>  <DropdownMenuSeparator />
             <DropdownMenuItem className="hover:bg-gray-200">
-              My Books
-            </DropdownMenuItem>
-           <NavLink href={'/dashboard'}> <DropdownMenuItem className="hover:bg-gray-200">
-              Dashboard
-            </DropdownMenuItem></NavLink>
-            <DropdownMenuItem className="hover:bg-gray-200">
-            <span>Logout</span> <span className="text-xl -ml-[2px]"><CgLogOut/> </span>
-</DropdownMenuItem>
-
+              <span>Logout</span>{" "}
+              <span className="text-xl -ml-[2px]">
+                <CgLogOut />{" "}
+              </span>
+            </DropdownMenuItem>  <DropdownMenuSeparator />
           </div>
         </DropdownMenuContent>
       </DropdownMenu>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { Oswald } from "next/font/google";
 import { useRouter } from "next/navigation";
+import ImageFuntion from "../BookDetails/Image";
 
 const Oswalds = Oswald({ weight: "600", subsets: ["latin"] });
 
@@ -11,26 +12,22 @@ export default function BookCard({ book }) {
   const handleClick = () => {
     router.push(`/books/${book._id}`);
   };
+  console.log(book);
   return (
     <div className="group flex flex-col justify-center text-center items-center  py-4d" onClick={handleClick}>
       <div className="w-[250px] sm:w-[85%] h-[320px] bg-white/80 flex items-center justify-center cursor-pointer rounded-md">
         <div className="transition-all duration-500 w-44 h-64 transform group-hover:scale-110">
-          <Image
-            src={book?.image}
-            alt="Book"
-            width={150}
-            height={150}
-            className="w-full rounded h-full object-cover"
-          />
+         
+          <ImageFuntion image={book?.image} className={"w-full rounded h-full object-cover"}/>
         </div>
       </div>
 
       <div className="space-y-1 mt-2">
         <p className="mt-2 font-semibold text-xl hover:text-[#1EAACE] duration-100 cursor-default">
-          Operating System
+         {book?.bookName}
         </p>
-        <p className="font-medium">Hoauk Publication</p>
-        <p className="font-medium">420 taka</p>
+        <p className="font-medium">{book?.publisher}</p>
+        <p className="font-medium">{book?.price} taka</p>
         <div className="group relative inline-block overflow-hidden border border-[#318ef1] !mt-3 px-5 focus:outline-none cursor-pointer py-2 rounded-md">
           <span className="absolute inset-y-0 left-0 w-px bg-[#318ef1] transition-all duration-300 group-hover:w-full group-active:bg-indigo-500"></span>
 

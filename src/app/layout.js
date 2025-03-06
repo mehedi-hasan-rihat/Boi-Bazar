@@ -1,7 +1,7 @@
 import { Mulish } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "./lib/authProvider";
-
+import { Toaster } from "react-hot-toast";
 
 const mulish = Mulish({ weight: "700", subsets: ["latin"] });
 export const metadata = {
@@ -13,8 +13,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={mulish.className}>
-      <AuthProvider>{children}</AuthProvider>
-        {/* <div className="h-[1522px] bg-blue-900"></div> */}
+        <AuthProvider>
+          {children}
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

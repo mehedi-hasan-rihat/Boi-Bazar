@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <div className="hidden md:block w-[280px]">
         <DashboardNavList />
       </div>
-      <div className="min-h-[calc(100vh-250px)] w-full bg-[#F5F6FA] overflow-y-scroll pb-10">
+      <div className="min-h-[calc(100vh-250px)] w-full bg-[#F7F6F9] overflow-y-scroll pb-10">
         <DashboardNavabr />
         <div className="px-4"> {children}</div>
       </div>
