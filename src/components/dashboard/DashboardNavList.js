@@ -13,7 +13,7 @@ import NavLink from "../Shared/NavLink";
 import { CgProfile } from "react-icons/cg";
 
 const DashboardNavList = () => {
-  const user = "seller";
+  const user = "admin";
   const router = useRouter();
 
   const handleNavigation = (route) => {
@@ -54,7 +54,7 @@ const DashboardNavList = () => {
           </NavLink>
           <li
             className="flex items-center space-x-4 cursor-pointer hover:bg-gray-700 p-3 rounded-md transition"
-            onClick={() => handleNavigation("/dashboard/books")}
+            onClick={() => handleNavigation("/dashboard/users/my-orders")}
           >
             <Book size={20} />
             <span>My Orders</span>
@@ -119,13 +119,13 @@ const DashboardNavList = () => {
             <span>Sell Book</span>
           </NavLink>
 
-          <li
+          <NavLink href={'/dashboard/orders'}
             className="flex items-center space-x-4 cursor-pointer hover:bg-gray-700 p-3 rounded-md transition"
-            onClick={() => handleNavigation("/orders")}
+         
           >
             <ShoppingCart size={20} />
             <span>Manage Orders</span>
-          </li>
+          </NavLink>
 
           <li
             className="flex items-center space-x-4 cursor-pointer hover:bg-gray-700 p-3 rounded-md transition"
@@ -158,13 +158,13 @@ const DashboardNavList = () => {
         </NavLink>
       
        
-        <li
+        <NavLink href={'/dashboard/users'}
           className="flex items-center space-x-4 cursor-pointer hover:bg-gray-700 p-3 rounded-md transition"
-          onClick={() => handleNavigation("/users")}
+          
         >
           <Users size={20} />
           <span>Manage Users</span>
-        </li>
+        </NavLink>
 
 
         <li

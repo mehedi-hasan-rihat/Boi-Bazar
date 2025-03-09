@@ -6,7 +6,7 @@ export default function Overview() {
   return (
     <div>
       <StatsDashboard />
-        <Charts/>
+      <Charts />
     </div>
   );
 }

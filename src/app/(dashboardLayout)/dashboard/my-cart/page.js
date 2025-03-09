@@ -43,13 +43,13 @@ const CartPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Cart Items Container (spanning 2 columns on md+) */}
         <div className="md:col-span-2 bg-white rounded-md shadow-sm">
-          {cartItems.length === 0 ? (
-            <p className="text-lg text-gray-600">Your cart is empty.</p>
+          {cartItems.length < 1 ? (
+            <div className="text-lg text-gray-600 flex items-center justify-center h-full"><p>Your cart is empty.</p></div>
           ) : (
             cartItems.map((item) => (
               <div
                 key={item.id}
-                className=" border-b p-4 flex flex-col sm:flex-row items-center justify-between  "
+                className=" border-b py-1 px-3 flex flex-col sm:flex-row items-center justify-between  "
               >
                 <div className="flex items-center space-x-4 w-full">
                   <Image
@@ -102,7 +102,7 @@ const CartPage = () => {
 
         {/* Checkout Summary Card (Right Column) */}
         {cartItems.length > 0 && (
-          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
+          <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200 max-h-max">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
               Checkout Summary
             </h3>

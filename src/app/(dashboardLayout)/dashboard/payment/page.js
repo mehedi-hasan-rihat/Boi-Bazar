@@ -1,23 +1,23 @@
 import { Badge } from "@/components/ui/badge";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 async function OrderManagementDashboard() {
-
-      const res = await fetch("http://localhost:3000/api/payment");
-      const orders = await res.json();
- 
+  const res = await fetch("http://localhost:3000/api/payment");
+  const orders = await res.json();
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <div className="flex-1">
-        <div className="mb-6 flex justify-between items-center">
-          <h2 className="text-3xl font-semibold text-gray-800">
-            Order Management Dashboard
-          </h2>
-        </div>
+    <div className="min-h-screen bg-gray-50">
+      <div className="mb-6 flex justify-between items-center">
+        <h2 className="text-3xl font-semibold text-gray-800">
+          Order Management Dashboard
+        </h2>
+      </div>
 
-        {/* Table */}
-        <div className="overflow-x-auto bg-white rounded-lg px-2">
-          <table className="min-w-full border-separate border-spacing-y-3">
+      {/* Table */}
+      <div className="overflow-x-auto rounded-lg px-2">
+        <ScrollArea className=" w-full rounded-md border p-1">
+          {" "}
+          <table className="w-full border-separate border-spacing-y-3">
             {/* Table Head */}
             <thead>
               <tr className="bg-blue-100 text-gray-700 rounded-lg">
@@ -43,8 +43,12 @@ async function OrderManagementDashboard() {
                   <td className="px-6 py-3 rounded-l-lg font-medium text-gray-800">
                     {order.orderId}
                   </td>
-                  <td className="px-6 py-3 text-gray-700">{order.customerEmail}</td>
-                  <td className="px-6 py-3 text-gray-700">${order.totalAmount}</td>
+                  <td className="px-6 py-3 text-gray-700">
+                    {order.customerEmail}
+                  </td>
+                  <td className="px-6 py-3 text-gray-700">
+                    ${order.totalAmount}
+                  </td>
                   <td className="px-6 py-3">
                     <Badge
                       className={`${
@@ -60,14 +64,21 @@ async function OrderManagementDashboard() {
                       {order.deliveryStatus}
                     </Badge>
                   </td>
-                  <td className="px-6 py-3 text-gray-700">{order.refundStatus}</td>
-                  <td className="px-6 py-3 text-gray-700">{order.paymentMethod}</td>
-                  <td className="px-6 py-3 rounded-r-lg text-gray-700">{order.tnxId}</td>
+                  <td className="px-6 py-3 text-gray-700">
+                    {order.refundStatus}
+                  </td>
+                  <td className="px-6 py-3 text-gray-700">
+                    {order.paymentMethod}
+                  </td>
+                  <td className="px-6 py-3 rounded-r-lg text-gray-700">
+                    {order.tnxId}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
-        </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
       </div>
     </div>
   );

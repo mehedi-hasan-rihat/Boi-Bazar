@@ -107,13 +107,13 @@ function SellerBookPost() {
               className="mt-2"
             />
             {imagePreview && (
-              <div className="mt-4 w-32 h-32 relative">
+              <div className="mt-4 relative">
                 <Image
                   src={imagePreview}
                   alt="Book Preview"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg shadow-md"
+                  width={150}
+                  height={150}
+                  className="rounded-lg w-auto h-64 shadow-md"
                 />
               </div>
             )}

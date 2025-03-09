@@ -25,6 +25,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import SalesOverTime from "@/components/dashboard/sellerChart/SalesOverTime";
 
 const stats = [
   {
@@ -49,36 +50,20 @@ const stats = [
   },
 ];
 
-const generateSalesData = () => {
-  const sales = [];
-  const currentDate = new Date();
-  for (let i = 11; i >= 0; i--) {
-    const monthDate = new Date(currentDate);
-    monthDate.setMonth(currentDate.getMonth() - i);
-    const formattedDate = `${monthDate.getFullYear()}-${(
-      monthDate.getMonth() + 1
-    )
-      .toString()
-      .padStart(2, "0")}-01`;
-    const booksSold = Math.floor(Math.random() * 100) + 50;
-    sales.push({ date: formattedDate, booksSold });
-  }
-  return sales;
-};
 
 const revenueData = [
-  { month: "Jan", revenue: 0 },
-  { month: "Feb", revenue: 0 },
+  { month: "Jan", revenue: 20 },
+  { month: "Feb", revenue: 10 },
   { month: "Mar", revenue: 0 },
-  { month: "Apr", revenue: 0 },
-  { month: "May", revenue: 0 },
+  { month: "Apr", revenue: 30 },
+  { month: "May", revenue: 70 },
   { month: "Jun", revenue: 0 },
   { month: "Jul", revenue: 0 },
-  { month: "Aug", revenue: 0 },
-  { month: "Sep", revenue: 0 },
+  { month: "Aug", revenue: 40 },
+  { month: "Sep", revenue: 10 },
   { month: "Oct", revenue: 0 },
-  { month: "Nov", revenue: 0 },
-  { month: "Dec", revenue: 0 },
+  { month: "Nov", revenue: 50 },
+  { month: "Dec", revenue: 10 },
 ];
 
 const topSellingBooksData = [
@@ -95,11 +80,7 @@ const stockStatusData = [
 ];
 
 const SellerDashboard = () => {
-  const [salesData, setSalesData] = useState([]);
-  useEffect(() => {
-    setSalesData(generateSalesData());
-  }, []);
-
+  
   return (
     <div className="mt-6 space-y-8">
       {/* Seller Stats */}
@@ -127,25 +108,11 @@ const SellerDashboard = () => {
       {/* Sales Trends Over Time & Additional Graphs */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Sales Trends Over Time */}
-        <div className="col-span-2">
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
-              Sales Trends Over Time
-            </h2>
-            <ResponsiveContainer width="100%" height={350}>
-              <LineChart data={salesData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="date" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="booksSold" stroke="#61C3C5" />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
- {/* Stock Status (Pie Chart) */}
- <div className="p-6 bg-white rounded-lg shadow-md">
+     <div className="col-span-2">
+     <SalesOverTime/>
+     </div>
+        {/* Stock Status (Pie Chart) */}
+        <div className="p-6 bg-white rounded-lg shadow-md">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Stock Status
           </h2>
@@ -170,14 +137,13 @@ const SellerDashboard = () => {
             </PieChart>
           </ResponsiveContainer>
         </div>
-   
 
-             {/* Top Selling Books (Bar Chart) */}
-             <div className="p-6 col-span-2 bg-white rounded-lg shadow-md">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
+        {/* Top Selling Books (Bar Chart) */}
+        <div className="px-2  bg-white rounded-lg shadow-md">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4 pt-6 pb-2 px-6 ">
             Top Selling Books
           </h2>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={350}>
             <BarChart data={topSellingBooksData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="book" />
@@ -189,10 +155,9 @@ const SellerDashboard = () => {
           </ResponsiveContainer>
         </div>
 
-        
         {/* Revenue by Month (Line Chart) */}
 
-        <div className="p-6 bg-white rounded-lg shadow-md">
+        <div className="p-6 bg-white rounded-lg shadow-md col-span-2">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Revenue by Month
           </h2>
@@ -207,8 +172,6 @@ const SellerDashboard = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
-
-       
       </div>
 
       {/* Books Available for Sale Table */}
@@ -284,4 +247,3 @@ const SellerDashboard = () => {
 };
 
 export default SellerDashboard;
-

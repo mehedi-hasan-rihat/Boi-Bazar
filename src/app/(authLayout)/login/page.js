@@ -8,12 +8,17 @@ export default function SignIn() {
   };
 
   return (
-    <div>
+    <div className="flex gap-2">
       <Button
         onClick={() => handleSignIn("github")}
-        
       >
         Sign in with GitHub
+      </Button>
+
+      <Button
+        onClick={() => handleSignIn("google")}
+      >
+        Sign in with Google
       </Button>
     </div>
   );

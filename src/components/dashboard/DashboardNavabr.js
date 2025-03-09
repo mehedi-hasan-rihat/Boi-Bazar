@@ -13,7 +13,7 @@ import Image from "next/image";
 const DashboardNavbar = () => {
   const [search, setSearch] = useState("");
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
   return (
     <nav className="bg-white z-50 shadow-sm mb-5 p-2 flex justify-between items-center sticky top-0">
       {/* Left: Brand/Logo */}

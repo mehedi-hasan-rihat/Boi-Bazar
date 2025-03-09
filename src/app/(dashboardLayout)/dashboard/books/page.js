@@ -16,7 +16,7 @@ async function BookManagementDashboard() {
 
         {/* Table */}
         <div className=" rounded-lg px-2 w-full">
-          <ScrollArea className=" w-full rounded-md border p-4">
+          <ScrollArea className=" w-full rounded-md border p-1">
             <table className="min-w-full border-separate border-spacing-y-3 ">
               {/* Table Head */}
               <thead>

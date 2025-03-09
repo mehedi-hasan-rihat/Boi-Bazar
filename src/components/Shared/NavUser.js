@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { CgLogOut } from "react-icons/cg";
 import NavLink from "./NavLink";
+import { signOut } from "next-auth/react";
 export default function NavUser({ session }) {
   console.log(session);
   const user = 'admin'

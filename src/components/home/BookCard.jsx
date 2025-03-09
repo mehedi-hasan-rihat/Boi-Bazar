@@ -12,7 +12,7 @@ export default function BookCard({ book }) {
   const handleClick = () => {
     router.push(`/books/${book._id}`);
   };
-  console.log(book);
+  // console.log(book);
   return (
     <div className="group flex flex-col justify-center text-center items-center  py-4d" onClick={handleClick}>
       <div className="w-[250px] sm:w-[85%] h-[320px] bg-white/80 flex items-center justify-center cursor-pointer rounded-md">
